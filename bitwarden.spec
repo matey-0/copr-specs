@@ -5,8 +5,8 @@ Summary:        Bitwarden Desktop (Repackaged)
 License:        GPLv3
 URL:            https://bitwarden.com
 
+%global _build_id_links none
 %global __os_install_post %{nil}
-%define _build_id_links none
 
 %description
 Bitwarden Desktop repackaged for COPR.
@@ -30,5 +30,5 @@ ln -sf /opt/Bitwarden/bitwarden %{buildroot}%{_bindir}/bitwarden
 /usr/share/icons/hicolor/*/apps/bitwarden.png
 
 %changelog
-* Mon Feb 02 2026 mateogrgic - %{version}-1
+* Mon Feb 03 2026 mateogrgic - %{version}-1
 - Fixed filesystem conflicts and unpackaged files
