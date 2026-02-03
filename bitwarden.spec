@@ -18,7 +18,9 @@ mkdir -p %{buildroot}
 rpm2cpio bitwarden.rpm | cpio -idmv -D %{buildroot}
 
 %files
-/*
+/opt/Bitwarden/
+/usr/bin/bitwarden
+/usr/share/applications/bitwarden.desktop
 
 %changelog
 - Automatic update to version %{version}
