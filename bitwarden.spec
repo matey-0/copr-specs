@@ -21,6 +21,8 @@ rpm2cpio bitwarden.rpm | cpio -idmv -D %{buildroot}
 /opt/Bitwarden/
 /usr/bin/bitwarden
 /usr/share/applications/bitwarden.desktop
+/usr/share/icons/hicolor/*/apps/bitwarden.png
+%exclude /bitwarden.spec
 
 %changelog
 - Automatic update to version %{version}
