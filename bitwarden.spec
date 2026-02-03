@@ -18,6 +18,8 @@ curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download
 mkdir -p %{buildroot}
 rpm2cpio bitwarden.rpm | cpio -idmv -D %{buildroot}
 rm -f %{buildroot}/bitwarden.spec
+mkdir -p %{buildroot}%{_bindir}
+ln -sf /opt/Bitwarden/bitwarden %{buildroot}%{_bindir}/bitwarden
 
 %files
 %defattr(-,root,root,-)
