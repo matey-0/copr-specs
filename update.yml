@@ -1,0 +1,28 @@
+name: Check for Bitwarden Updates
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Get latest Bitwarden version
+        id: get-version
+        run: |
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/bitwarden/clients/releases | jq -r '[.[] | select(.name | contains("Desktop"))][0].name' | sed 's/Desktop v//')
+          echo "latest=$LATEST_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update spec file
+        run: |
+          sed -i "s/^Version:.*/Version:        ${{ steps.get-version.outputs.latest }}/" bitwarden.spec
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "Update Bot"
+          git config --global user.email "bot@github.com"
+          git add bitwarden.spec
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update to version ${{ steps.get-version.outputs.latest }}" && git push)
