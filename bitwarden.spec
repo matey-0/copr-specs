@@ -1,5 +1,5 @@
 Name:           bitwarden
-Version:        2025.1.1                                                                                                                                       
+Version:        2026.1.1                                                                                                                                       
 Release:        1%{?dist}                                                                                                                                      
 Summary:        Bitwarden Desktop (Repackaged)                                                                                                                 
 License:        GPLv3
