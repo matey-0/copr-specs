@@ -10,7 +10,7 @@ URL:            https://bitwarden.com
 %description
 Bitwarden Desktop repackaged for COPR.
 %prep
-curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v%{version}/Bitwarden-%{version}-x86_64.rpm"
+curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v2026.1.0/Bitwarden-2026.1.0-x86_64.rpm"
 
 %install
 mkdir -p %{buildroot}
