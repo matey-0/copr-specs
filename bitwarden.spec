@@ -1,5 +1,5 @@
 Name:           bitwarden
-Version:        2026.2.1                                                                                                                                     
+Version:        2026.3.1                                                                                                                                     
 Release:        1%{?dist}                                                                                                                                      
 Summary:        Bitwarden Desktop (Repackaged)                                                                                                                 
 License:        GPLv3
@@ -10,7 +10,7 @@ URL:            https://bitwarden.com
 %description
 Bitwarden Desktop repackaged for COPR.
 %prep
-curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v2026.1.0/Bitwarden-2026.1.0-x86_64.rpm"
+curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v2026.3.1/Bitwarden-2026.3.1-x86_64.rpm"
 
 %install
 mkdir -p %{buildroot}
