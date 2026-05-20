@@ -6,11 +6,23 @@ License:        GPLv3
 URL:            https://bitwarden.com
 
 %global _build_id_links none
+%define _use_internal_dependency_generator 0
+%global __find_requires %{nil}
 %global __os_install_post %{nil}
+
+Requires: at-spi2-core
+Requires: gtk3
+Requires: libXScrnSaver
+Requires: libnotify
+Requires: nss
+Requires: xdg-utils
+Requires: (libXtst or libXtst6)
+Requires: (libuuid or libuuid1)
+
 %description
 Bitwarden Desktop repackaged for COPR.
 %prep
-curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v2026.4.0/Bitwarden-2026.4.0-x86_64.rpm"
+curl -L -o bitwarden.rpm "https://github.com/bitwarden/clients/releases/download/desktop-v%{version}/Bitwarden-%{version}-x86_64.rpm"
 
 %install
 mkdir -p %{buildroot}
