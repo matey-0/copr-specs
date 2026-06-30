@@ -1,5 +1,5 @@
 Name:           bitwarden
-Version:        2026.6.0                                                                                                                                     
+Version:        2026.6.1                                                                                                                                     
 Release:        1%{?dist}                                                                                                                                      
 Summary:        Bitwarden Desktop (Repackaged)                                                                                                                 
 License:        GPLv3
